@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import booksRoute from "./routes/booksRoute.js";
+import cors from 'cors';
 // const uri=process.env.mongoDB_URL;
 dotenv.config();
 const PORT =8080||process.env.PORT;
@@ -11,7 +12,7 @@ const app=express();
 // console.log('MongoDB URL:', process.env.MONGODB_URL);
 //console.log('App Port:', PORT); Debugging log
 app.use(express.json());
-// app.use(
+app.use(cors());
 //     cors({
 //         origin:'http://localhost:8080',
 //         methods:['GET','POST','PUT','DELETE'],
